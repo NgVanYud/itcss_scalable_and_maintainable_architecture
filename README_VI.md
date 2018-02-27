@@ -11,18 +11,20 @@ Năm ngoái, khi chúng tôi bắt đầu dự án [HEROized](https://www.heroiz
 [CSS Modules](http://www.sitepoint.com/understanding-css-modules-methodology/) là một cái gì đó mới và khá kì lạ lúc bấy giờ, và chúng tôi đã lưu ý về [Thiết kế phân tử](http://patternlab.io/) đại loại như một phân tử hoá học nhân tạo. Sau đó tôi tham gia hội thảo [Roberts’s](https://csswizardry.com/)  ITCSS vào tháng 6/2015, vấn đề của  [tạp chí mạng internet](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) và ngay lập tức tôi tìm thấy giải pháp đơn giản, cách tiếp cận CSS thực tế nhất.
 
  ### Vậy ITCSS là gì?
- ITCSS là cụm từ viết tắt của "Inverted Triangle CSS" và nó giúp bạn tổ chức các file CSS trong dự án một cách tốt nhất mà bạn có thể **gặp phải** (không phải những vấn đề thường gặp phải) đối với CSS cụ thể như **global namespace, cascade và các đối tượng cụ thể.**.
-ITCSS can be used with git git or without them and is compatible with CSS methodologies like BEM, SMACSS or OOCSS.
-One of the key principles of ITCSS is that it separates your CSS codebase to several sections (called layers), which take form of the inverted triangle:
+ ITCSS là cụm từ viết tắt của "Inverted Triangle CSS" và nó giúp bạn tổ chức các file CSS trong dự án một cách tốt nhất mà bạn có thể **gặp phải** (không phải những vấn đề thường gặp phải) đối với CSS cụ thể như **phân vùng toàn cục, mô hình thác nước và các đối tượng cụ thể.**.
+ITCSS có thể sử dụng thông qua git hoặc không thông qua git và nó tương thích với các kĩ thuật lập trình như BEM (phương thức lập trình HTML,CSS hướng modules), SMACSS (phương thức phân tích thiết kế và tổ chức CSS hướng modular và có thể mở rộng) or OOCSS (CSS hướng đối tượng).
+một trong những nguyên tắc chính của ITCSS là nó phân tách mã nguồn CSS của bạn thành các phần mã (được gọi là "lớp") theo 1 mô hình có dạng tam giác ngược "Inverted Triangle":
 ![inverted triangle](https://other.media/wp-content/uploads/2017/01/itcss_2.png)
-Those layers are as follows:
- - Settings- used with preprocessors and contain font, colors definitions, etc.
- - Tool - globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
- - Generic - reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
- - Elements - styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
- - Objects - class-based selectors which define undecorated design patterns, for example media object known from OOCSS
- - Components - specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components
- - Utilities - utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+Các lớp trên bao gồm:
+ - Settings- sử dụng với các tiền xử lý và có chứa phông chữ, định nghĩa màu sắc, v.v ...
+ - Tool - toàn cục hoá sử dụng mixins và functions. Điều quan trọng là không trả ra bất kỳ CSS nào trong 2 lớp đầu tiên.
+ - Generic - reset và/hoặc chuẩn hoá các styles, định nghĩa lại các khối,... Đây là layer đầu tiên có tương tác với CSS thực tế.
+ - Elements - định dạng các phần tử HTML (ví dụ H1, A,...). Các thành phần này được định dạng mặc định bởi trình duyệt và  chúng ta có thể định nghĩa lại chúng ở layer này.
+ - Objects - các thành phần cơ sở (class-based selectors) mà chưa được định nghĩa theo 1 khuôn mẫu cụ thể, ví dụ như các thành phần đa phương tiện chỉ được biết tới trong OOCSS.
+ - Components - các thành phần UI cụ thể. Đây là nơi phần lớn công việc của chúng ta được thực hiện và các thành phần UI của chúng ta thường bao gồm các đối tượng và thành phần.
+
+ - Utilities - các tiện ích và các lớp hỗ trợ (helper class) với khả năng ghi đè bất cứ thứ gì được đặt ở đỉnh của tam giác ví dụ như việc ẩn các lớp hỗ trợ.
+
 The triangle also shows how styles represented by selectors are ordered in the resulting CSS: from generic styles to explicit ones, from low-specificity selectors to more specific ones (but still not too specific, IDs are not allowed) and from far reaching to localized ones.
 ![inverted triangle](https://other.media/wp-content/uploads/2017/01/itcss_1.png)
 Such CSS organization should help you avoid Specificity Wars and is represented by [a healthy specificity graph](https://jonassebastianohlsson.com/specificity-graph/)
@@ -146,6 +148,6 @@ So in a minimal setup you can have just components with default elements styling
 You cannot go wrong with ITCSS. It’s the result of the experience and many years of work by Harry Roberts, one of the most renowned CSS authors out there. If you don’t mind digging into the resources a bit, you will be rewarded with a simple but powerful architecture which will allow you to create scalable and maintainable CSS for your small or big projects.
 But don’t forget to keep an eye on other players like [CSS modules](https://github.com/css-modules/css-modules) , in the meantime.
  
- ##### Interested in more ITCSS?
+ ##### Tìm hiểu thêm về ITCSS?
  - [ITCSS: A Year After](https://www.xfive.co/blog/itcss-year-after/) - Five insights from the year with Inverted Triangle CSS.
  - Check out [Chisel](https://github.com/xfiveco/generator-chisel), a Yeoman generator for front-end and WordPress projects, which supports ITCSS. 
