@@ -2,9 +2,9 @@
 # Bài viết mẫu: [https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 Bản tiếng việt!!
 -------------------------------------
-## ITCSS: Bảo trì và mở rộng kiến trúc css 
+## ITCSS: kiến trúc css bảo trì và mở rộng
 viết bởi Lubos Kmetko ngày 10 tháng 2, 2016 
-### Tôi phải làm sao để duy trì và mở rông Css của mình? Đây là điều mà các lập trình viên front-end luôn quan tâm. ITCSS có 1 câu trả lời cho vấn đề này.
+### Tôi phải làm sao để duy trì và mở rông Css của mình? Đây là điều mà các lập trình viên front-end luôn quan tâm. ITCSS là 1 câu trả lời cho vấn đề này.
 
 Năm ngoái, khi chúng tôi bắt đầu dự án [HEROized](https://www.heroized.com/), thiết kế lại và làm mới 1 số phần của trang web [Xfive.co], chúng tôi tìm kiếm 1 kiến trúc CSS có khả năng phát triển dễ dàng và có thể bảo trì về sau.
 
@@ -25,36 +25,36 @@ Các lớp trên bao gồm:
 
  - Utilities - các tiện ích và các lớp hỗ trợ (helper class) với khả năng ghi đè bất cứ thứ gì được đặt ở đỉnh của tam giác ví dụ như việc ẩn các lớp hỗ trợ.
 
-The triangle also shows how styles represented by selectors are ordered in the resulting CSS: from generic styles to explicit ones, from low-specificity selectors to more specific ones (but still not too specific, IDs are not allowed) and from far reaching to localized ones.
-![inverted triangle](https://other.media/wp-content/uploads/2017/01/itcss_1.png)
-Such CSS organization should help you avoid Specificity Wars and is represented by [a healthy specificity graph](https://jonassebastianohlsson.com/specificity-graph/)
- ### Documentation
-Update 10/27/2016: The net magazine has just republished the original article from the print version (see the resources below).
-Normally, at this point I would refer you to the [ITCSS webpage](https://itcss.io/) for further study. However, nothing like open source documentation exists.
-ITCSS remains partially proprietary and if you want to fully utilize it, you should study the original introduction in the net magazine. I’m not here to judge author’s intentions (I’m thankful to him for sharing his knowledge), but I think this prevents ITCSS wider adoption (which might be the intention, after all).
- > The partially proprietary character of ITCSS prevents its wider adoption.
+Mô hình tam giác cũng cho ta biết làm cách nào để biểu diễn các định dạng bằng các đối tượng được sắp xếp khi đưa ra các CSS kết quả:từ các định dạng chung tới các định dạng rõ ràng, từ các đối tượng đặc hiệu cấp thấp đến những thành phần cụ thể hơn (nhưng vẫn không quá cụ thể) và các thành phần từ xa tới thành phần tập trung gần hơn.
+![Tam giác ngược](https://other.media/wp-content/uploads/2017/01/itcss_1.png)
+Cách tổ chức CSS như vậy giúp bạn tránh được những Xung đột đặc trưng và nó được biểu hiện như [một đồ thị đặc trưng](https://jonassebastianohlsson.com/specificity-graph/)
+ ### Tài liệu
+Cập nhật 10/27/2016: Các tạp chí net vừa tái xuất bản bài báo gốc từ phiên bản in (xem tài nguyên dưới đây).
+Thông thường, tại thời điểm này tôi sẽ giới thiệu về [ITCSS webpage](https://itcss.io/) cho bạn để nghiên cứu thêm về nó. Tuy nhiên,nó không có gì tồn tại mà giống với tài liệu của mã nguồn mở này.
+ITCSS vẫn còn chứa đựng 1 phần và nếu bạn muốn sử dụng nó 1 cách đầy đủ nhất,bạn phải học phần giới thiệu ban đầu trên tạp chí net. Tôi không ở đây để đánh giá ý định của tác giả (Tôi rất biết ơn anh ấy vì đã chia sẻ kiến thức của anh ấy), nhưng tôi nghĩ điều này ngăn việc ITCSS được áp dụng rộng rãi hơn (có thể là ý định).
+ > Vấn đề này của ITCSS khiến nó khó áp dụng rộng rãi hơn.
 
-This shouldn’t prevent you from start to use it in your projects, though, if you are really interested in doing so. [Get that particular issue ](https://www.myfavouritemagazines.co.uk/design/net-magazine-back-issues/) of the net magazine to learn ITCSS fundamentals, and then study available online resources and examples to help you with its adoption in real-life projects.
-### Resources
-I’ve used ITCSS on 4 projects so far (including Xfive.co) and the following resources helped me to get better understanding of it:
- - [Manage large CSS projects with ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) - ITCSS introduction by Harry Roberts (the original article republished from the print version, missing are shorter columns on the specificity graph and preprocessors)
- - [Manage large-scale web projects with new CSS architecture ITCSS](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) - ITCSS introduction and interview with Harry Roberts
- - [Harry Roberts – Managing CSS Projects with ITCSS ](https://www.youtube.com/watch?v=1OKZOV-iLj4) - a talk given by Harry at DaFED and its [accompanying slides](https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
- - [Manage large CSS projects with ITCSS](https://www.youtube.com/watch?v=hz76JIU_xB0) - a screencast for the net article
- - [ITCSS Screencast code](https://github.com/itcss/itcss-netmag) -  code from the above screencast at GitHub
+Điều này không làm khó được bạn khi bạn bắt đầu sử dụng nó trong dự án của mình, nếu bạn thực sự quan tâm đến việc làm như vậy. [Tiếp cận những vấn đề cụ thể ](https://www.myfavouritemagazines.co.uk/design/net-magazine-back-issues/) trên tạp chí net để nắm được những nguyên tắc cơ bản của ITCSS, và sau đó nghiên cứu các tài nguyên trực tuyến có sẵn và các ví dụ để giúp bạn áp dụng nó trong các dự án thực tế.
+### Tài nguyên
+Tôi đã sử dụng ITCSS vào hơn 4 dự án (bao gồm Xfive.co) và việc nghiên cứu các tài liệu nguồn về ITCSS giúp tôi hiểu rõ hơn về nó:
+ - [Manage large CSS projects with ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) - giới thiệu về ITCSS, viết bởi Harry Roberts (bài báo ban đầu được tái bản từ bản in, thiếu là các cột ngắn hơn trên biểu đồ độ đặc hiệu và tiền xử lý)
+ - [Manage large-scale web projects with new CSS architecture ITCSS](https://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731) - giới thiệu tổng quan về ITCSS  và phỏng vấn Harry Roberts
+ - [Harry Roberts – Managing CSS Projects with ITCSS ](https://www.youtube.com/watch?v=1OKZOV-iLj4) - cuộc nói chuyện của Harry tại DaFED và [các slide đi kèm](https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
+ - [Manage large CSS projects with ITCSS](https://www.youtube.com/watch?v=hz76JIU_xB0) - một screencast cho các bài báo
+ - [ITCSS Screencast code](https://github.com/itcss/itcss-netmag) -  mã nguồn từ screencast phía trên trên github.
  - [Another ITCSS project example](https://github.com/csswizardry/frcss)
- - Articles at csswizardry.com and especially the following ones:
+ - Các bài báo tại địa chỉ csswizardry.com và đặc biệt là các bài dưới đây:
     - [BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
     - [More Transparent UI Code with Namespaces](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
     - [Immutable CSS](https://csswizardry.com/2015/03/immutable-css/)
     - [The Specificity Graph](https://csswizardry.com/2014/10/the-specificity-graph/)
- - [inuitcss](https://github.com/inuitcss/inuitcss) - OOCSS framework which is based on ITCSS and shows some more advanced concepts and possibilities
+ - [inuitcss](https://github.com/inuitcss/inuitcss) - framework OOCSS dựa trên ITCSS, cải tiến 1 số khái niệm và 1 số chức năng
  - [The BEMIT naming convention](http://www.jamesturneronline.net/blog/bemit-naming-convention.html)
-You can also check out [Chisel](https://github.com/xfiveco/generator-chisel/), our Yeoman generator for front-end and WordPress projects, which supports ITCSS.
- ### Experience
-Here are a few thoughts based on my experience with ITCSS projects:
- ##### Less thinking on naming and styles location
-ITCSS’s prescriptive nature especially when combined with [ BEMIT naming convention](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/) allows you to focus more on solving front-end challenges rather than thinking up names and styles location. This is what Xfive.co main.scss looks like:
+bạn có thể xem qua [Chisel](https://github.com/xfiveco/generator-chisel/), bộ sinh Yeoman của chúng tôi dành cho các dự án front-end và WordPress, hỗ trợ ITCSS.
+ ### Kinh nghiệm 
+Sau đây là 1 vài quan điểm của tôi dựa trên những kĩnh nghiệm tích lũy được qua các dự án ITCSS:
+ ##### Nghĩ ít hơn về việc đặt tên hay tạo mẫu vị trí
+Bản chất tự nhiên của ITCSS, đặc biệt khi kết hợp với [quy ước đặt tên của BEMIT](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/) cho phép bạn tập trung vài việc giải quyết các vấn đề front-end thay vì nghĩ về tên gọi hay định dạng các vị trí.  File main.css của Xfive.co có dạng thế này:
 ```
 @import "settings.colors";
 @import "settings.global";
@@ -130,24 +130,24 @@ ITCSS’s prescriptive nature especially when combined with [ BEMIT naming conve
 
 @import "healthcheck";
 ```
-Note: We use [separate folders for each layer](https://github.com/xfiveco/generator-chisel/tree/master/generators/app/templates/styles/itcss) and load newly added stylesheets automatically in  [Chisel](https://github.com/xfiveco/generator-chisel/)
- ##### Objects reusability for fast development
- ITCSS’ objects are perfect candidates for building a library of reusable components to allow fast front-end development.  UI parts would then be composed of generic objects and project specific components. For example, innuitcss as a generic ITCSS based framework contains [a bunch of objects](https://github.com/inuitcss/inuitcss/tree/develop/objects) but only [one sample component](https://github.com/inuitcss/inuitcss/tree/develop/components)
+Ghi chú: chúng tôi sử dụng [phân chia thư mục thành các lớp layer](https://github.com/xfiveco/generator-chisel/tree/master/generators/app/templates/styles/itcss)  và tự động tải các định dạng thêm mới bằng [Chisel](https://github.com/xfiveco/generator-chisel/)
+ ##### Áp dụng tính sử dụng lại của đối tượng để phát triển nhanh hơn
+ Các đối tượng của ITCSS là ứng cử viên hàng đầu cho việc xây dựng thư viện các thành phần có thể sử dụng lại được nhằm phát triển front-end nhanh hơn. Các thành phần UI bao gồm các đối tượng chung và các thành phần đặc thù của dự án. Ví dụ, innuitcss làm 1 framework xây dựng trên nền ITCSS, có chứa [các thành phần đối tượng](https://github.com/inuitcss/inuitcss/tree/develop/objects) nhưng lại thuộc [duy nhất một thành phần](https://github.com/inuitcss/inuitcss/tree/develop/components)
  ##### Animations
- I recommend defining generic, global animations as objects too, eg. @keyframes o-fade-in in file _objects.animations.scss
-Component specific animations should be defined in respective components files, eg. @keyframes c-hero-scale in _components.hero.scss.
- ##### Flexibility
- ITCSS is quite flexible in terms of your workflow and tools. One of our developers expressed a concern about how much boilerplate ITCSS comes with. But in fact this is totally up to you - ITCSS doesn't prescribe that you need to have all layers present (only in what order they should be if they are present).
-So in a minimal setup you can have just components with default elements styling coming from the browser. Of course, this is not very practical - some settings, reset and/or normalize CSS are used by almost everyone for good reasons.
- ##### Critical CSS 
- ITCSS plays nice with critical CSS due to the inverted triangle key metrics. The component based model allows you to separate above the fold UI into logical components so you can even pick parts of your critical CSS ‘manually’ (more on that in an upcoming article).
- ##### File size and styles duplication
- If there is any concern with an architecture like ITCSS or basically any component like CSS architecture, it might be the resulting file size. Components encapsulate styles and allow us to avoid CSS conflicts and overrides but it also means that styles repetition can occur quite often.
- ITCSS cannot compete with a [functional CSS ](https://blog.colepeters.com/building-and-shipping-functional-css/)in this sense. On the other hand, if you find yourself repeating a lot of styling in components, you could consider moving those styles to separate objects.
-### Conclusion
-You cannot go wrong with ITCSS. It’s the result of the experience and many years of work by Harry Roberts, one of the most renowned CSS authors out there. If you don’t mind digging into the resources a bit, you will be rewarded with a simple but powerful architecture which will allow you to create scalable and maintainable CSS for your small or big projects.
-But don’t forget to keep an eye on other players like [CSS modules](https://github.com/css-modules/css-modules) , in the meantime.
+Tôi khuyên bạn nên định nghĩa các animation chung như là các đối tượng, ví dụ như @keyframes o-fade-in trong file _objects.animations.scss, các thành phần đặc thù cho animation nên được định nghĩa trong các file thành phần tương ứng, ví dụ @keyframes c-hero-scale trong file _components.hero.scss.
+ ##### Tính linh hoạt
+ ITCSS rất linh hoạt trong luồng công việc cũng như các công cụ của bạn. Một trong nhưng lập trình viên của chúng tôi đã bày tỏ sự quan tâm về việc ITCSS nó đã hoàn thiện như thế nào. Nhưng sự thật là điều đó hoàn toàn phụ thuộc vào bạn - ITCSS không yêu cầu bạn phải có tất cả các lớp (chỉ  sử dụng các cái có thể cần thôi). Do vậy trong 1 cài đặt tối thiểu, bạn có thể chỉ cần 1 vài thành phần với những phần tử mẫu mặc định theo trình duyệt. Tất nhiên là điều này không thiết thực chút nào - một vài cài đặt, đặt lại và/ hay chuẩn hóa CSS được sử dụng rất nhiều vì những lợi ích của chúng.
+ ##### Critical CSS (các thành phần CSS quan trọng)
+ITCSS hỗ trợ rất tốt với critical CSS nhờ những tiêu chuẩn của "tam giác ngược". Các thành phần dựa trên mô hình (model) cho phép bạn tách riêng từng thành phần UI thành các thành phần logic, do đó bạn thậm chí có thể chọn từng phần critical CSS của bạn thủ công (chi tiết hơn ở trong bài viết tiếp theo)
+
+
+ ##### Kích thước file và trùng lặp mẫu
+ Nếu có bất kỳ mỗi mối bận tâm nào về kiến trúc như ITCSS hay đơn giản là bất kỳ thành phần nào như là kiến trúc CSS, thì kích thước file là 1 trong những điều phải quan tâm. Các thành phần sẽ đóng gói các mẫu và cho phép chúng ta tránh các xung đột CSS và ghi đè, tuy nhiên điều này cũng đồng nghĩa với việc sự lặp lại mẫu có thể thường xuyên xảy ra. Trong trường hợp này ITCSS không thể so sánh với [CSS hướng chức năng ](https://blog.colepeters.com/building-and-shipping-functional-css/). Mặt khác, nếu bạn thấy có quá nhiều sự trùng lặp về các thành phần, bạn hãy cân nhắc tới việc sử dụng các đối tượng riêng biệt.
+ 
+### Kết luận 
+Bạn không sai lầm khi sử dụng ITCSS. Nó là kết quả từ kinh nghiệm sau nhiều năm làm việc của Harry Roberts, một trong những tác giả CSS nổi tiếng nhất trên thế giới. Nếu bạn muốn đào sâu vào mã nguồn 1 chút, bạn sẽ thấy rằng đây là một kiến trúc đơn giản nhưng mô cùng mạnh mẽ, cho phép bạn tạo ra những dự án nhỏ lẫn to với CSS rất dễ mở rộng và bảo trì. 
+Nhưng cũng đừng quên các vấn đề khác như [CSS hướng modules](https://github.com/css-modules/css-modules) khi bạn có thời gian.
  
  ##### Tìm hiểu thêm về ITCSS?
- - [ITCSS: A Year After](https://www.xfive.co/blog/itcss-year-after/) - Five insights from the year with Inverted Triangle CSS.
- - Check out [Chisel](https://github.com/xfiveco/generator-chisel), a Yeoman generator for front-end and WordPress projects, which supports ITCSS. 
+ - [ITCSS: sau 1 năm](https://www.xfive.co/blog/itcss-year-after/) - 5 điều về tam giác ngược CSS.
+ - Tham khảo [Chisel](https://github.com/xfiveco/generator-chisel), bộ sinh Yeoman cho các dự án front-end và WordPress của chúng tôi, nó có hỗ trợ ITCSS.
